@@ -1,0 +1,50 @@
+// -------------------- Global Base variables --------------------
+// Here are the new global base variables with new naming conventions
+// Naming convention: @base-cssProperty
+@base-fontFamily: Helvetica Neue, Helvetica, Arial, Tahoma, Verdana, Helvetica, Sans-Serif;
+@base-fontSize: 14px;
+@base-lineHeight: 24px;
+@base-color: #666;
+@base-backgroundColor: #fff;
+@base-imagePath: ~"/assets/img";
+
+// Brand colors
+@brand-primary: blue;
+@brand-secondary: gray;
+@brand-success: green;
+@brand-warning: yellow;
+@brand-danger: red;
+
+// -------------------- Media Queries variables --------------------
+// Our practice is to write code with "mobile first" in mind whenever possible
+// That's why our first minWidth is 480px since we don't need a media query for smaller devices
+
+// Small screen / phone
+@base-screen--xs-minWidth: 480px;
+// Small screen / tablet
+@base-screen--sm-minWidth: 600px;
+// Medium screen / desktop
+@base-screen--md-minWidth: 768px;
+// Large screen / wide desktop
+@base-screen--lg-minWidth: 1050px;
+// XL screen / wide desktop
+@base-screen--xl-minWidth: 1400px;
+
+// Max width for each breakpoint
+@base-screen--xs-maxWidth: (@base-screen--sm-minWidth - 1);
+@base-screen--sm-maxWidth: (@base-screen--md-minWidth - 1);
+@base-screen--md-maxWidth: (@base-screen--lg-minWidth - 1);
+@base-screen--lg-maxWidth: (@base-screen--xl-minWidth - 1);
+
+// Above a specific breakpoint media queries
+@base-screen--xs--above: ~"only screen and (min-width: @{base-screen--xs-minWidth})";
+@base-screen--sm--above: ~"only screen and (min-width: @{base-screen--sm-minWidth})";
+@base-screen--md--above: ~"only screen and (min-width: @{base-screen--md-minWidth})";
+@base-screen--lg--above: ~"only screen and (min-width: @{base-screen--lg-minWidth})";
+@base-screen--xl--above: ~"only screen and (min-width: @{base-screen--xl-minWidth})";
+
+// Specific breakpoint media queries
+@base-screen--xs--only: ~"only screen and (min-width: @{base-screen--xs-minWidth}) and (max-width: @{base-screen--xs-maxWidth})";
+@base-screen--sm--only: ~"only screen and (min-width: @{base-screen--sm-minWidth}) and (max-width: @{base-screen--sm-maxWidth})";
+@base-screen--md--only: ~"only screen and (min-width: @{base-screen--md-minWidth}) and (max-width: @{base-screen--md-maxWidth})";
+@base-screen--lg--only: ~"only screen and (min-width: @{base-screen--lg-minWidth}) and (max-width: @{base-screen--lg-maxWidth})";
